@@ -7,12 +7,12 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 0; background-color: #f4f7f6; }
         
-        /* New Header Design: Logo behind Title */
+        /* Header Design: Full Logo Background */
         header { 
             position: relative;
-            background-color: #003366; 
+            background-color: #000; 
             color: #fff; 
-            padding: 80px 20px; 
+            padding: 100px 20px; 
             text-align: center; 
             overflow: hidden;
         }
@@ -20,19 +20,21 @@
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('workshop-logo.jpg'); /* Use your uploaded image */
+            background-image: url('workshop-logo.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 1; /* Makes the logo subtle behind the text */
+            opacity: 1;
             z-index: 0;
+            filter: brightness(0.6); /* Dims the image slightly so white text is readable */
         }
         header h1, header p { position: relative; z-index: 1; margin: 0; }
-        header h1 { font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        header p { font-size: 1.2rem; margin-top: 10px; font-weight: 300; }
+        header h1 { font-size: 2.2rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
+        header p { font-size: 1.2rem; margin-top: 10px; font-weight: 400; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
 
-        .container { background: #fff; padding: 2.5rem; margin: -20px 20px 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; z-index: 2; }
+        .container { background: #fff; padding: 2.5rem; margin: -40px 20px 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; z-index: 2; }
         .dates { background: #fdf2f2; padding: 1.5rem; border-left: 5px solid #d9534f; margin: 2rem 0; }
         h2 { color: #003366; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #003366; margin-top: 1.5rem; }
         
         /* Organizer Grid */
         .organizer-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; list-style: none; padding: 0; margin-top: 1.5rem; }
@@ -40,6 +42,7 @@
         
         .contact-section { background: #eef; padding: 1.5rem; border-radius: 8px; text-align: center; margin-top: 2rem; }
         .footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #777; padding-bottom: 2rem; }
+        ul li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -51,8 +54,28 @@
 
 <div class="container">
     <h2>About the Workshop</h2>
-    <p>Cyber-physical systems like industrial robots, autonomous vehicles, and humanoids are moving into real-world, high-stakes domains where they must safely coordinate with humans, other machines, and infrastructure. Because failures can have serious consequences, the workshop centers on methods to systematically elicit and formalize requirements from diverse stakeholders—regulators, developers, operators, and end users—and integrate those requirements into the design and verification of autonomous CPS.</p>
-    <p>The workshop also highlights how large language models and other interactive, multimodal tools can capture stakeholder knowledge in natural forms (text, speech, diagrams, demonstrations) and translate it into formal or semi-formal artifacts for analysis and testing. It emphasizes that successful interactive co-design is as much an HCI challenge as a verification one, requiring interfaces and backend algorithms that reduce user burden, detect gaps or inconsistencies, and support iterative inspection and correction—bringing together CPS, IoT, and HCI communities to set benchmarks, share case studies (including negative results), and shape a practical research agenda for safe, assured autonomy.</p>
+    <p>As autonomous cyber-physical systems (CPS) transition from laboratories to high-stakes environments like healthcare and defense, ensuring safety and stakeholder alignment has become a critical necessity. The emergence of large language models (LLMs) and foundation models offers a transformative opportunity to bridge the gap between diverse stakeholders and technical design. By leveraging multi-modal elicitation—including text, speech, and simulations—researchers can now translate natural human input into the formal specifications and environment models required for rigorous CPS verification and assurance.</p>
+
+    <p>However, effective co-design is fundamentally a human-computer interaction (HCI) challenge; tools must be carefully designed to prevent user fatigue and ensure specifications remain consistent. This workshop aims to unite researchers from the CPS, IoT, and HCI communities to develop interfaces and algorithms that allow for iterative, interpretable, and efficient requirement gathering. By integrating human factors with formal methods, the event seeks to catalyze a new research agenda for building safe, human-in-the-loop autonomous systems grounded in real-world deployment needs.</p>
+
+    <h2>Call for Papers</h2>
+    <p>We invite submissions that explore the intersection of HCI, formal methods, and autonomous systems. To encourage broad participation and the exchange of early-stage ideas, <strong>we allow dual publications or re-submission of previously published papers or case studies</strong>. We also specifically welcome <strong>negative results</strong> as long as they provide meaningful insights to spur discussion for the theme of our workshop.</p>
+
+    <h3>Topics of Interest</h3>
+    <p>Topics of interest include, but are not limited to:</p>
+    <ul>
+        <li>Interactive elicitation of system requirements, task objectives, or task environments for autonomous systems</li>
+        <li>Safety constraints, assurance cases, and runtime safety envelopes derived from human input</li>
+        <li>Human–robot/system collaboration requirements in shared workspaces</li>
+        <li>Detecting and repairing inconsistencies, ambiguities, and missing assumptions in specifications with human-in-the-loop</li>
+        <li>Interpretable representations for users to inspect, debug, and correct formal artifacts</li>
+        <li>Verification, validation, and testing workflows supported by interactive co-design tools</li>
+        <li>Generating test scenarios, edge cases, and adversarial situations from stakeholder knowledge</li>
+        <li>Benchmark datasets, metrics, and evaluation protocols for interactive requirements tools</li>
+        <li>Case studies in interactive tacit knowledge elicitation in manufacturing, construction, healthcare, defense, and other high-stakes CPS deployments</li>
+        <li>Negative results, lessons learned, and failure modes of interactive/LLM-driven co-design</li>
+    </ul>
+
     <div class="dates">
         <h3>Important Dates</h3>
         <ul>
