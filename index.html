@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Co-Design Workshop | CPS-Week 2026</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        header { background: #003366; color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 8px; margin-bottom: 2rem; }
-        h1 { margin: 0; font-size: 2rem; line-height: 1.2; }
-        .logo-container { text-align: center; margin-top: -50px; margin-bottom: 20px; }
-        .logo-container img { width: 250px; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .container { background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .dates { background: #eef; padding: 1.5rem; border-left: 5px solid #003366; margin: 2rem 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 0; background-color: #f4f7f6; }
+        
+        /* New Header Design: Logo behind Title */
+        header { 
+            position: relative;
+            background-color: #003366; 
+            color: #fff; 
+            padding: 80px 20px; 
+            text-align: center; 
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('workshop-logo.jpg'); /* Use your uploaded image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25; /* Makes the logo subtle behind the text */
+            z-index: 0;
+        }
+        header h1, header p { position: relative; z-index: 1; margin: 0; }
+        header h1 { font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        header p { font-size: 1.2rem; margin-top: 10px; font-weight: 300; }
+
+        .container { background: #fff; padding: 2.5rem; margin: -20px 20px 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; z-index: 2; }
+        .dates { background: #fdf2f2; padding: 1.5rem; border-left: 5px solid #d9534f; margin: 2rem 0; }
         h2 { color: #003366; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem; }
-        .organizer-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; list-style: none; padding: 0; }
+        
+        /* Organizer Grid */
+        .organizer-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; list-style: none; padding: 0; margin-top: 1.5rem; }
         .organizer-item { background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
+        
+        .contact-section { background: #eef; padding: 1.5rem; border-radius: 8px; text-align: center; margin-top: 2rem; }
         .footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #777; padding-bottom: 2rem; }
     </style>
 </head>
@@ -25,22 +49,17 @@
     <p>Workshop at CPS-Week 2026 | Saint Malo, France</p>
 </header>
 
-<div class="logo-container">
-    <img src="workshop-logo.jpg" alt="Workshop Logo">
-</div>
-
 <div class="container">
     <h2>About the Workshop</h2>
-    <p>Cyber-physical systems (CPS), including industrial manipulators, mobile robots, autonomous vehicles, and emerging humanoid platforms, are rapidly moving from controlled laboratory settings into high-stakes application domains such as manufacturing, construction, healthcare, and defense[cite: 7, 113]. In these environments, autonomous systems increasingly share physical workspaces with human operators and must coordinate with other autonomous agents and networked infrastructure[cite: 8, 114].</p>
+    <p>Cyber-physical systems (CPS), including industrial manipulators, mobile robots, autonomous vehicles, and emerging humanoid platforms, are rapidly moving from controlled laboratory settings into high-stakes application domains such as manufacturing, construction, healthcare, and defense[cite: 219]. In these environments, autonomous systems increasingly share physical workspaces with human operators and must coordinate with other autonomous agents and networked infrastructure[cite: 220]. This tight coupling between computation, physical dynamics, and human activity makes safety, robustness, and assurance central concerns rather than afterthoughts[cite: 221].</p>
     
-    <p>This tight coupling between computation, physical dynamics, and human activity makes safety, robustness, and assurance central concerns[cite: 9, 115]. The workshop focuses on how to interactively elicit and formalize stakeholder requirements—including regulators, developers, and end users—in the design and verification of autonomous CPS[cite: 11, 12, 117, 118]. We explore how recent advances in Large Language Models (LLMs) and foundation models open new opportunities for interactive, multi-modal knowledge elicitation[cite: 13, 119].</p>
+    <p>The workshop will focus on how to interactively elicit and formalize these stakeholder requirements in the design and verification of autonomous CPS[cite: 224]. Realizing the potential of LLM-driven and other interactive techniques requires carefully designed interfaces and interaction modalities spanning text, speech, diagrams, and simulations. Ultimately, the combined interface and backend must enable users to iteratively instruct, inspect, and correct formalized domain knowledge in an interpretable manner[cite: 239].</p>
 
     <div class="dates">
         <h3>Important Dates</h3>
         <ul>
-            <li><strong>Submission Deadline:</strong> March 1, 2026 [cite: 38, 144]</li>
-            <li><strong>Author Notification:</strong> April 1, 2026 [cite: 38, 144]</li>
-            <li><strong>Workshop Date:</strong> November 2026 [cite: 22, 128]</li>
+            <li><strong>Submission Deadline:</strong> February 15, 2026</li>
+            <li><strong>Author Notification:</strong> March 7, 2026</li>
         </ul>
     </div>
 
@@ -49,26 +68,33 @@
         <div class="organizer-item">
             <strong>Edward Kim</strong><br>
             Postdoctoral Researcher, EECS<br>
-            UC Berkeley [cite: 46, 152]
+            University of California, Berkeley [cite: 258, 277]
         </div>
         <div class="organizer-item">
             <strong>Bjoern Hartmann</strong><br>
             Associate Professor, EECS<br>
-            UC Berkeley [cite: 44, 150]
+            University of California, Berkeley [cite: 256, 268]
         </div>
         <div class="organizer-item">
             <strong>Yasser Shoukry</strong><br>
             Associate Professor, EECS<br>
-            UC Irvine [cite: 45, 151]
+            University of California, Irvine [cite: 257, 273]
         </div>
     </div>
 
-    <h2>Program Highlights</h2>
+    <h2>Program Structure</h2>
     <ul>
-        <li><strong>Session 1:</strong> Design of Interactive Methods for LLM-Powered Design of CPS [cite: 34, 140]</li>
-        <li><strong>Session 2:</strong> Human Factors in Interactive Methods [cite: 35, 141]</li>
-        <li><strong>Session 3:</strong> Applications and Use Cases [cite: 36, 142]</li>
+        <li><strong>Session 1:</strong> Design of Interactive Methods for LLM-Powered Design of CPS [cite: 246]</li>
+        <li><strong>Session 2:</strong> Human Factors in Interactive Methods [cite: 247]</li>
+        <li><strong>Session 3:</strong> Applications and Use Cases [cite: 248]</li>
+        <li>Poster Session and Panel Session for Discussions and Networking [cite: 249]</li>
     </ul>
+
+    <div class="contact-section">
+        <h3>Questions?</h3>
+        <p>If you have any questions about the workshop, please contact us at:<br>
+        <strong><a href="mailto:ek65@eecs.berkeley.edu">ek65@eecs.berkeley.edu</a></strong></p>
+    </div>
 </div>
 
 <div class="footer">
